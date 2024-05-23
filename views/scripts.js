@@ -7,6 +7,7 @@ function toggleDarkMode() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);  // Save the new theme preference to localStorage
     const navbar = document.querySelector('.navbar');
     if (newTheme === 'dark') {
         navbar.classList.remove('navbar-light', 'bg-light');
@@ -17,12 +18,23 @@ function toggleDarkMode() {
     }
 }
 
-///////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////Event Listners//////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////////
+// //////////////////////////////////Event Listners//////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////////
 
 // Dark Mode Toggle 
 document.addEventListener('DOMContentLoaded', function () {
+    const savedTheme = localStorage.getItem('theme') || 'light';  // Default to 'light' if no preference is saved
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    const navbar = document.querySelector('.navbar');
+    if (savedTheme === 'dark') {
+        navbar.classList.remove('navbar-light', 'bg-light');
+        navbar.classList.add('navbar-dark', 'bg-dark');
+    } else {
+        navbar.classList.remove('navbar-dark', 'bg-dark');
+        navbar.classList.add('navbar-light', 'bg-light');
+    }
+
     const darkModeToggle = document.getElementById('darkModeToggle');
     if (darkModeToggle) {
         darkModeToggle.addEventListener('click', toggleDarkMode);
