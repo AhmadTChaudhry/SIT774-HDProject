@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cool Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <%- include('navbar'); -%>
+
+        <section class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <h1>Welcome to Deakin Car Rental</h1>
+                <p>Drive with comfort and confidence, every time.</p>
+            </div>
+        </section>
+
+        <main>
+            <div class="container my-5">
+                <% if (user) { %>
+                    <h2 style="text-align: center;">Welcome, <%= user.email %>!</h2>
+                    <% } else { %>
+                        <h2 style="text-align: center;">Deakin Rental Has You Covered!</h2>
+                        <% } %>
+                            <section class="features">
+                                <div class="row text-center">
+                                    <div class="col-md-4 feature">
+                                        <div class="feature-img-wrapper">
+                                            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyJTIwcmVudGFsfGVufDB8fDB8fHww"
+                                                alt="Feature 1" class="img-fluid mb-3 feature-img">
+                                        </div>
+                                        <h3>Hassle Free Rental</h3>
+                                        <p>Choose a date, pick a car, no worries.</p>
+                                    </div>
+                                    <div class="col-md-4 feature">
+                                        <div class="feature-img-wrapper">
+                                            <img src="https://images.unsplash.com/photo-1605282003441-a966bb348137?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGV0cm9sJTIwc3RhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+                                                alt="Feature 2" class="img-fluid mb-3 feature-img">
+                                        </div>
+                                        <h3>No Fuel Worries</h3>
+                                        <p>Pick the car topped up, leave it empty</p>
+                                    </div>
+                                    <div class="col-md-4 feature">
+                                        <div class="feature-img-wrapper">
+                                            <img src="https://mrwallpaper.com/images/hd/luxury-supercar-models-qmajs40yksbq6mwb.jpg"
+                                                alt="Feature 3" class="img-fluid mb-3 feature-img">
+                                        </div>
+                                        <h3>Extensive Fleet</h3>
+                                        <p>Choose from our curated fleet of cars.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a style="width: 30%;" href="/cars"
+                                        class="btn btn-secondary d-flex justify-content-center" tabindex="-1"
+                                        role="button" aria-disabled="true">View Our Fleet!</a>
+                                </div>
+                            </section>
+
+
+            </div>
+
+            <div id="features" class="container">
+                <h2 class="text-center">Website Features</h2>
+                <section class="new-features my-5">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="auth"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">User Authentication</h5>
+                                    <p class="card-text">Working User Auth and Session</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="darkmode"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Dark Mode</h5>
+                                    <p class="card-text">Sitewide Dark Mode Support.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="api"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">API Integration</h5>
+                                    <p class="card-text">Pulling Car Data from API Endpoints</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="forms"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Forms Support</h5>
+                                    <p class="card-text">Form Entries Saved to Database.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="maps"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Maps Integration</h5>
+                                    <p class="card-text">View Location on Google Maps.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="video"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Video Integration</h5>
+                                    <p class="card-text">Watch Reviews Right Here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="qform" class="container my-5">
+                <h2 class="text-center">Submit Your Query</h2>
+                <div id="flash-message" class="alert alert-success" style="display: none;"></div>
+                <form id="queryForm" action="/submit-query" method="POST" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input style="width:35%;" type="text" class="form-control" id="name" name="name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="number" class="form-label">Number</label>
+                        <input style="width:35%;" type="number" class="form-control" id="number" name="number" required>
+                        <div class="invalid-feedback">Please enter your number.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="query" class="form-label">Query</label>
+                        <textarea style="width:75%;" class="form-control" id="query" name="query" rows="6"
+                            required></textarea>
+                        <div class="invalid-feedback">Please enter your query.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="/queries" class="btn btn-secondary">View Queries</a>
+                </form>
+            </div>
+
+            <div class="container">
+                <h2 class="text-center"> Come Give Us a Visit</h2>
+                <br>
+                <iframe style="border-radius: 1%;"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25204.539225297016!2d145.0776823891624!3d-37.84701211111481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6405fe4dc7559%3A0x7e1fb589280a34f5!2sCarpark%206!5e0!3m2!1sen!2sau!4v1716449879299!5m2!1sen!2sau"
+                    width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <br><br>
+
+            <div class="container">
+                <h2 class="text-center"> Heres Some Tips While Renting</h2>
+                <br>
+                <iframe style="border-radius: 1%;" width="100%" height="600"
+                    src="https://www.youtube.com/embed/L-MdiLOZaZo"
+                    title="10 Tips with Renting a Car | Top Things to Know Before Your Next Trip!" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lottie-web"></script>
+        <script src="scripts.js"></script>
+        <%- include('footer'); -%>
+</body>
+
+</html>

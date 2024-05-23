@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Cars</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <section>
+        <div>
+            <%- include('navbar'); -%>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-image-rental"></div>
+        <div class="hero-text">
+            <h1>Welcome to Deakin Car Rental</h1>
+            <p>Discover the best of our products</p>
+        </div>
+    </section>
+
+    <div class="containercar">
+        <h2 style="text-align: center;">Cars Available Today</h2>
+        <br>
+        <div class="row">
+            <% cars.forEach(car=> { %>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= car.make %>
+                                    <%= car.model %>
+                            </h5>
+                            <p class="card-text">Year: <%= car.year %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web"></script>
+    <script src="scripts.js"></script>
+    <%- include('footer'); -%>
+</body>
+
+</html>
