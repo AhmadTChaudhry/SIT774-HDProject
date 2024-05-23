@@ -7,7 +7,7 @@ function toggleDarkMode() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);  // Save the new theme preference to localStorage
+    localStorage.setItem('theme', newTheme);
     const navbar = document.querySelector('.navbar');
     if (newTheme === 'dark') {
         navbar.classList.remove('navbar-light', 'bg-light');
@@ -24,7 +24,7 @@ function toggleDarkMode() {
 
 // Dark Mode Toggle 
 document.addEventListener('DOMContentLoaded', function () {
-    const savedTheme = localStorage.getItem('theme') || 'light';  // Default to 'light' if no preference is saved
+    const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     const navbar = document.querySelector('.navbar');
     if (savedTheme === 'dark') {
@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
         navbar.classList.remove('navbar-dark', 'bg-dark');
         navbar.classList.add('navbar-light', 'bg-light');
     }
-
     const darkModeToggle = document.getElementById('darkModeToggle');
     if (darkModeToggle) {
         darkModeToggle.addEventListener('click', toggleDarkMode);
