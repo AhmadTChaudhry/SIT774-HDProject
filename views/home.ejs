@@ -21,7 +21,8 @@
         </section>
 
         <main>
-            <div class="container my-5">
+            <br>
+            <div class="container my-3">
                 <% if (user) { %>
                     <h2 style="text-align: center;">Welcome, <%= user.email %>!</h2>
                     <% } else { %>
@@ -63,10 +64,11 @@
 
 
             </div>
+            <br><br>
 
             <div id="features" class="container">
                 <h2 class="text-center">Website Features</h2>
-                <section class="new-features my-5">
+                <section class="new-features my-3">
                     <div class="row">
                         <div class="col-md-4 mb-4">
                             <div class="card h-100">
@@ -130,8 +132,9 @@
                     </div>
                 </section>
             </div>
+            <br><br>
 
-            <div id="qform" class="container my-5">
+            <div id="qform" class="container my-3">
                 <h2 class="text-center">Submit Your Query</h2>
                 <div id="flash-message" class="alert alert-success" style="display: none;"></div>
                 <form id="queryForm" action="/submit-query" method="POST" class="needs-validation" novalidate>
@@ -155,6 +158,7 @@
                     <a href="/queries" class="btn btn-secondary">View Queries</a>
                 </form>
             </div>
+            <br><br>
 
             <div class="container">
                 <h2 class="text-center"> Come Give Us a Visit</h2>

@@ -22,7 +22,7 @@ function toggleDarkMode() {
 // //////////////////////////////////Event Listners//////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////////
 
-// Dark Mode Toggle 
+// Dark Mode 
 document.addEventListener('DOMContentLoaded', function () {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Paraallax Effect
 document.addEventListener('scroll', function () {
     const scrolled = window.scrollY;
-    const parallax = document.querySelector('.hero-image, .hero-image-rental');
+    const parallax = document.querySelector('.hero-image, .hero-image-rental, .hero-image2');
     parallax.style.transform = 'translateY(' + scrolled * 0.5 + 'px)';
 });
 
