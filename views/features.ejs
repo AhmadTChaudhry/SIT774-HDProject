@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deakin Rentals</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <%- include('navbar'); -%>
+
+        <section class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <h1>Welcome to Deakin Car Rental</h1>
+                <p>Drive with comfort and confidence, every time.</p>
+            </div>
+        </section>
+
+        <main>
+            <br><br>
+            <div id="features" class="container">
+                <h2 class="text-center">Website Features</h2>
+                <section class="new-features my-5">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="auth"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">User Authentication</h5>
+                                    <p class="card-text">Working User Auth and Session</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="darkmode"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Dark Mode</h5>
+                                    <p class="card-text">Sitewide Dark Mode Support.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="api"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">API Integration</h5>
+                                    <p class="card-text">Pulling Car Data from API Endpoints</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="forms"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Forms Support</h5>
+                                    <p class="card-text">Form Entries Saved to Database.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="maps"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Maps Integration</h5>
+                                    <p class="card-text">View Location on Google Maps.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div style="height: 100%; width: 100%;" id="video"></div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Video Integration</h5>
+                                    <p class="card-text">Watch Reviews Right Here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <br><br>
+            <div id="features" class="container">
+                <section class="new-features my-5">
+                    <h1>this project is built on Nodejs using ejs</h1>
+                    <h2>User Authentication</h2>
+                    <p>User Authentication is using the node module passport and all the user passwords are being
+                        encrypted and stored using the module bcrypt. sessions are also enabled through passport.</p>
+                    <h2>API Support</h2>
+                    <p>All the car data is being fetched using axios through an api called car data api by principal
+                        apis. the api has multiple endpoints which allow me to pull car type, make, model and year
+                        separately. </p>
+                    <h2>Dark Mode</h2>
+                    <p>Dark mode has been implemented using some custom css and javascript. clicking the dark mode
+                        button in the navbar runs some custom javascript that changes the class of the elements to a
+                        different one with custom styling applied. the js also stores the current state in memory so
+                        that the dark mode is persistent. </p>
+                    <h2>Animations</h2>
+                    <p>All animations are coming in as json files that i have taken from the lottiefiles website, i am
+                        running their animation engine using javascript which is displaying them in my project.</p>
+                    <h2>Forms Support</h2>
+                    <p>Forms support has been added using sqlite3, a local database is being created which is storing
+                        the data from the form in a table. </p>
+                    <h2>Maps Integration</h2>
+                    <p>Maps have been embedded in the project using an iframe which is just pulling the pinned location
+                        from google maps.</p>
+                    <h2>Video Integration</h2>
+                    <p>Video has also been embedded to the project using an iframe which is pulling the video from a
+                        youtube link.</p>
+                    <h2>Project Deployment</h2>
+                    <p>The whole node project has been uploaded to a repository on github and then deployed online using
+                        render. </p>
+                </section>
+            </div>
+
+
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lottie-web"></script>
+        <script src="scripts.js"></script>
+        <%- include('footer'); -%>
+</body>
+
+</html>

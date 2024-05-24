@@ -73,6 +73,10 @@ app.get('/login', (req, res) => {
     res.render('login', { user: req.user });
 });
 
+app.get('/features', (req, res) => {
+    res.render('features', { user: req.user });
+});
+
 app.get('/register', (req, res) => {
     res.render('register', { user: req.user });
 });
